@@ -44,20 +44,44 @@ namespace WinFormsApp104
             ShowCustomers();
         }
         void ShowCustomers()
-            
         {
-                SqlConnection conn = new SqlConnection(ConnectionString);
-        conn.Open();
+            SqlConnection conn = dbconnection.Nortwind_conn();
 
-                string sql = "SELECT * FROM Customers WHERE Country = @Country";
-        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Customers", conn);
-        DataTable dt = new DataTable();
-        da.Fill(dt);
+            string sql = "SELECT * FROM Customers";
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-                cboCountry.DataSource = dt;
-                cboCountry.DisplayMember = "Country";
-                cboCountry.ValueMember = "Country";
-                conn.Close();
-            }
-}
+            cboCountry.DataSource = dt;
+            cboCountry.DisplayMember = "Country";
+            cboCountry.ValueMember = "Country";
+            conn.Close();
+        }
+        void showcustomercountry(string Country)
+        {
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+
+            string sql = "SELECT * FROM Customers WHERE Country = @Country";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Country", Country);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvResult.DataSource = dt;
+            conn.Close();
+
+        }
+
+        private void btnShow_Click_1(object sender, EventArgs e)
+        {
+            showcustomercountry(cboCountry.SelectedValue.ToString());
+        }
+
+        private void cboCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showcustomercountry(cboCountry.SelectedValue.ToString());
+        }
+    }
 }

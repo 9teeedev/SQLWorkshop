@@ -37,6 +37,7 @@
             // 
             // dgvResult
             // 
+            dgvResult.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvResult.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvResult.Location = new Point(12, 72);
             dgvResult.Name = "dgvResult";
@@ -51,6 +52,7 @@
             cboCountry.Name = "cboCountry";
             cboCountry.Size = new Size(121, 23);
             cboCountry.TabIndex = 1;
+            cboCountry.SelectedIndexChanged += cboCountry_SelectedIndexChanged;
             // 
             // btnShow
             // 
@@ -60,6 +62,7 @@
             btnShow.TabIndex = 2;
             btnShow.Text = "แสดงข้อมูล";
             btnShow.UseVisualStyleBackColor = true;
+            btnShow.Click += btnShow_Click_1;
             // 
             // label1
             // 
