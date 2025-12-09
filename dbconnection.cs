@@ -8,7 +8,7 @@ namespace WinFormsApp104
     {
         public static SqlConnection Nortwind_conn()
         {
-            string ConnectionString = "Data Source=ADM403-24\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True; Encrypt=False";
+            string ConnectionString = "Data Source=ADM403-25\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True; Encrypt=False";
             SqlConnection conn = new SqlConnection (ConnectionString);
             conn.Open();
             return conn;

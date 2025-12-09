@@ -36,9 +36,11 @@ namespace WinFormsApp104
             frm.Show();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void workshop4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form4 frm = new Form4();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

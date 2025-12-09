@@ -47,7 +47,7 @@
             dgvOrders.Name = "dgvOrders";
             dgvOrders.Size = new Size(776, 251);
             dgvOrders.TabIndex = 5;
-            dgvOrders.CellContentClick += dgvOrders_CellContentClick;
+            dgvOrders.CellClick += dgvOrders_CellClick;
             // 
             // btnShow
             // 

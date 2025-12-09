@@ -61,6 +61,7 @@
             Controls.Add(txtName);
             Name = "Form1";
             Text = "ข้อมูลลูกค้า";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

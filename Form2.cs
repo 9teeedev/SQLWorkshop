@@ -21,9 +21,7 @@ namespace WinFormsApp104
         void showAllCusomers()
         {
             //สร้าง Object ของการเชื่อมต่อฐานข้อมูล
-            SqlConnection conn = new SqlConnection
-              (ConnectionString);
-            conn.Open();
+            SqlConnection conn = dbconnection.Nortwind_conn();
             //สร้างคำสั่ง SQL
             string sql = "SELECT * FROM Customers";
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
@@ -59,8 +57,7 @@ namespace WinFormsApp104
         }
         void showcustomercountry(string Country)
         {
-            SqlConnection conn = new SqlConnection(ConnectionString);
-            conn.Open();
+            SqlConnection conn = dbconnection.Nortwind_conn();
 
             string sql = "SELECT * FROM Customers WHERE Country = @Country";
             SqlCommand cmd = new SqlCommand(sql, conn);

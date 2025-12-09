@@ -33,6 +33,7 @@
             workshop1ToolStripMenuItem = new ToolStripMenuItem();
             workshop2ToolStripMenuItem = new ToolStripMenuItem();
             ordersToolStripMenuItem = new ToolStripMenuItem();
+            workshop4ToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             checkUpdateToolStripMenuItem = new ToolStripMenuItem();
@@ -48,53 +49,59 @@
             menuStrip1.Size = new Size(800, 29);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // workshopToolStripMenuItem
             // 
-            workshopToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { workshop1ToolStripMenuItem, workshop2ToolStripMenuItem, ordersToolStripMenuItem });
+            workshopToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { workshop1ToolStripMenuItem, workshop2ToolStripMenuItem, ordersToolStripMenuItem, workshop4ToolStripMenuItem });
             workshopToolStripMenuItem.Name = "workshopToolStripMenuItem";
-            workshopToolStripMenuItem.Size = new Size(73, 20);
+            workshopToolStripMenuItem.Size = new Size(93, 25);
             workshopToolStripMenuItem.Text = "Workshop";
             // 
             // workshop1ToolStripMenuItem
             // 
             workshop1ToolStripMenuItem.Name = "workshop1ToolStripMenuItem";
-            workshop1ToolStripMenuItem.Size = new Size(180, 22);
+            workshop1ToolStripMenuItem.Size = new Size(169, 26);
             workshop1ToolStripMenuItem.Text = "Workshop#1";
             workshop1ToolStripMenuItem.Click += workshop1ToolStripMenuItem_Click;
             // 
             // workshop2ToolStripMenuItem
             // 
             workshop2ToolStripMenuItem.Name = "workshop2ToolStripMenuItem";
-            workshop2ToolStripMenuItem.Size = new Size(180, 22);
+            workshop2ToolStripMenuItem.Size = new Size(169, 26);
             workshop2ToolStripMenuItem.Text = "Workshop#2";
             workshop2ToolStripMenuItem.Click += workshop2ToolStripMenuItem_Click;
             // 
             // ordersToolStripMenuItem
             // 
             ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            ordersToolStripMenuItem.Size = new Size(180, 22);
+            ordersToolStripMenuItem.Size = new Size(169, 26);
             ordersToolStripMenuItem.Text = "Orders";
             ordersToolStripMenuItem.Click += ordersToolStripMenuItem_Click;
+            // 
+            // workshop4ToolStripMenuItem
+            // 
+            workshop4ToolStripMenuItem.Name = "workshop4ToolStripMenuItem";
+            workshop4ToolStripMenuItem.Size = new Size(169, 26);
+            workshop4ToolStripMenuItem.Text = "Workshop#4";
+            workshop4ToolStripMenuItem.Click += workshop4ToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem, checkUpdateToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Size = new Size(54, 25);
             helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(148, 22);
+            aboutToolStripMenuItem.Size = new Size(176, 26);
             aboutToolStripMenuItem.Text = "About";
             // 
             // checkUpdateToolStripMenuItem
             // 
             checkUpdateToolStripMenuItem.Name = "checkUpdateToolStripMenuItem";
-            checkUpdateToolStripMenuItem.Size = new Size(148, 22);
+            checkUpdateToolStripMenuItem.Size = new Size(176, 26);
             checkUpdateToolStripMenuItem.Text = "Check Update";
             // 
             // FrmMain
@@ -123,5 +130,6 @@
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem checkUpdateToolStripMenuItem;
         private ToolStripMenuItem ordersToolStripMenuItem;
+        private ToolStripMenuItem workshop4ToolStripMenuItem;
     }
 }

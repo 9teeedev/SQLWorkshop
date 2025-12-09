@@ -58,13 +58,23 @@ namespace WinFormsApp104
         void ShowOrderDetail(int OrderID)
         {
             SqlConnection conn = dbconnection.Nortwind_conn();
-            string sql = "SELECT ProductID, UnitPrice, Quantity, Discount FROM [Order Details] WHERE OrderID = @orderID";
+            //string sql = "SELECT OrderID, OD.ProductID, ProductName, CategoryName, OD.UnitPrice, OD.Quantity, (OD.UnitPrice * OD.Quantity) AS TotalPrice, (OD.UnitPrice * OD.Quantity * (1 - OD.Discount)) AS PriceAfterDiscount FROM [Order Details] OD INNER JOIN Products P ON OD.ProductID = P.ProductID INNER JOIN Categories C ON P.CategoryID = C.CategoryID WHERE OrderID = @OrderID;";
+            SqlCommand cmd = new SqlCommand("sp_OrderDetails", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@OrderID", OrderID);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvOrderDetail.DataSource = dt;
+            conn.Close();
+
         }
 
-        private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             int orderID = Convert.ToInt32(dgvOrders.Rows[rowIndex].Cells["OrderID"].Value);
+            ShowOrderDetail(orderID);
         }
     }
 }
